@@ -7,7 +7,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const util = require('util');
+// const util = require('util');
 //Creates files and directory
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -94,15 +94,18 @@ const managerQuestions = () => {
         }
         else if (answers.roleChoice === "I am done inputting employees."){
             console.log("--Alll done! --");
-            // newEngineer();
+          //  render(EmployeeRoster);
+           const htmlRender = render(EmployeeRoster);
+           fs.writeFileSync(outputPath, htmlRender, "UTF-8");
+           
+           console.log("-- File Rendered --");
         }
                         
      })
      
    };
 
-  
-  // Add a new Engineer
+    // Add a new Engineer
   const newEngineer= () => {
     return inquirer.prompt([
       {
@@ -179,8 +182,7 @@ const managerQuestions = () => {
     } else {
         console.log("You must be a manager to input team members. Have a super day!")
     }
-    // console.log('Successfully wrote to testRoster');
-} catch (err) {
+   } catch (err) {
     console.log(err);
   }};
 
@@ -196,4 +198,3 @@ const managerQuestions = () => {
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
-
