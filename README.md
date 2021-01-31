@@ -18,7 +18,7 @@ Command Line Prompts for Team Information: <br>
 <img src="Assets/SS2.png"><hr>
 Now it's time to meet the team!
 <img src="Assets/SS3.png"><br>
-
+Shaking Dogs Pics By Carli Davidson <a href="http://www.carlidavidson.com/paintings" traget="_blank"> http://www.carlidavidson.com </a>
 
 <hr>
 <h1>Link to a video of the CLI Application Being Run</h1>
