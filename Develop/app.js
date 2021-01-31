@@ -61,8 +61,7 @@ const managerQuestions = () => {
      ]).then(answers => {
          const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
          EmployeeRoster.push(manager);
-         console.log("----EmployeeRoster----");
-         console.log(EmployeeRoster);
+        
          newEmployee();
      })
      
@@ -94,7 +93,7 @@ const managerQuestions = () => {
         }
         else if (answers.roleChoice === "I am done inputting employees."){
             console.log("--Alll done! --");
-          //  render(EmployeeRoster);
+         
            const htmlRender = render(EmployeeRoster);
            fs.writeFileSync(outputPath, htmlRender, "UTF-8");
            
@@ -132,8 +131,6 @@ const managerQuestions = () => {
     ]).then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
         EmployeeRoster.push(engineer);
-        console.log("----Employee Roster----");
-        console.log(EmployeeRoster);
         newEmployee();
     })
   };
@@ -165,7 +162,6 @@ const managerQuestions = () => {
     ]).then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         EmployeeRoster.push(intern);
-        console.log(EmployeeRoster);
         newEmployee();
     })
   };
